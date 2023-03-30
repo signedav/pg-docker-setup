@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgis:
+    container_name: daves_postgis
+    image: kartoza/postgis:13
+    restart: always
+    ports:
+      - 54322:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASS=docker
+      - ALLOW_IP_RANGE=0.0.0.0/0
+      - PASSWORD_AUTHENTICATION=md5
+      - POSTGRES_MULTIPLE_EXTENSIONS=uuid-ossp,postgis,hstore,postgis_topology,postgis_raster,pgrouting
+  pgadmin:
+    container_name: daves_pgadmin
+    image: dpage/pgadmin4:6.6
+    restart: always
+    ports:
+      - 5051:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: docker@opengis.ch
+      PGADMIN_DEFAULT_PASSWORD: docker
+    depends_on:
+      - postgis
