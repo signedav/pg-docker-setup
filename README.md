@@ -20,6 +20,8 @@ psql -hlocalhost -p54321 -Udocker -dgis
 docker run -d --env PGADMIN_DEFAULT_EMAIL=docker@opengis.ch --env PGADMIN_DEFAULT_PASSWORD=docker -p 5050:80 dpage/pgadmin4:6.6
 ```
 
+*** but it does not work - installed it now. fock it***
+
 ### Means:
 
 - URL: http://localhost:5050/
