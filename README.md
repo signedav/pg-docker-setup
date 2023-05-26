@@ -14,7 +14,7 @@ psql -hlocalhost -p54321 -Udocker -dgis
 
 ## with pgadmin docker
 
-- URL: http://localhost:5050/
+- URL: http://localhost:5052/
 - Username: docker@opengis.ch
 - Password: docker
 
