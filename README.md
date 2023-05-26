@@ -14,14 +14,23 @@ psql -hlocalhost -p54321 -Udocker -dgis
 
 ## with pgadmin docker
 
-- URL: http://localhost:5052/
+*** Since there are troubles with multiple pg-admins in each setup, I decided to remove it and just have one pgadmin on my pc (in a docker***
+
+```
+docker run -d --env PGADMIN_DEFAULT_EMAIL=docker@opengis.ch --env PGADMIN_DEFAULT_PASSWORD=docker -p 5050:80 dpage/pgadmin4:6.6
+```
+
+### Means:
+
+- URL: http://localhost:5050/
 - Username: docker@opengis.ch
 - Password: docker
 
+### Connect to pg
 - Port: 54322 (NOT 54321!)
 - Username: docker
 
-### Connect to pg
+### Connect to pg if it would be in the docker compose (workaround, but not used here)
 
 ```
 dave@dave-ThinkPad-T590:~/dev/signedav/pg-docker-setup$ docker network ls
